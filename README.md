@@ -1,4 +1,4 @@
-# hta-tutorials
+# HTA Tutorials
 The code from my video series called "HTA Tutorials".
 
 ### Glossary
