@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>&nbsp;</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+	<hta:application id="mainapp" 
+        applicationName="Tutorials" 
+        contextMenu="no" 
+        icon="explorer.exe" 
+        selection="no" 
+        singleInstance="yes"
+	    version="1.0" 
+    />
+    
+    <script>
+        // window setup
+        window.resizeTo(500,300)
+        var xpos = (screen.width - window.outerWidth) / 2
+        var ypos = (screen.height - window.outerHeight) / 2
+        window.moveTo(xpos, ypos)
+
+        // functions
+        function yesBtn() {
+            mytext.innerText = 'Welcome, Jeremy'
+        }
+
+        function quitApp() {
+            window.close()
+        }
+
+        function runCommand(command) {
+            var wss = new ActiveXObject('WScript.Shell')
+            wss.run(command)
+        }        
+    </script>
+</head>
+<body>
+
+    <i id="mytext">Are you Jeremy?</i>
+    <button onclick="yesBtn()">Yes</button>
+    <button onclick="quitApp()">No</button>
+
+    <button onclick="runCommand('notepad.exe')">Open Notepad</button>
+    <button onclick="runCommand('c:/users/%username%/desktop')">Open Desktop</button>
+    
+</body>
+</html>
