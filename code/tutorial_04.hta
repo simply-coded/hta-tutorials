@@ -5,33 +5,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 
 	<hta:application id="mainapp" 
-        applicationName="Tutorials" 
-        contextMenu="no" 
-        icon="explorer.exe" 
-        selection="no" 
-        singleInstance="yes"
-	    version="1.0" 
-    />
+        	applicationName="Tutorials" 
+        	contextMenu="no" 
+        	icon="explorer.exe" 
+        	selection="no" 
+        	singleInstance="yes"
+	    	version="1.0" 
+    	/>
     
-    <script>
-        // window setup
-        window.resizeTo(500,300)
-        var xpos = (screen.width - window.outerWidth) / 2
-        var ypos = (screen.height - window.outerHeight) / 2
-        window.moveTo(xpos, ypos)
+	<script>
+		// window setup
+		window.resizeTo(500,300)
+		var xpos = (screen.width - window.outerWidth) / 2
+		var ypos = (screen.height - window.outerHeight) / 2
+		window.moveTo(xpos, ypos)
 
-        // functions
-        function runCommand(command) {
-            var wss = new ActiveXObject('WScript.Shell')
-            wss.run(command)
-        } 
+		// functions
+		function runCommand(command) {
+		    var wss = new ActiveXObject('WScript.Shell')
+		    wss.run(command)
+		} 
 
-        function onEnter(k, text) {
-            if (k.keyCode == 13) {
-                runCommand(text)
-            }
-        }
-    </script>
+		function onEnter(k, text) {
+		    if (k.keyCode == 13) {
+			runCommand(text)
+		    }
+		}
+	</script>
 </head>
 <body>   
 
