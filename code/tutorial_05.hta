@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Run This Text</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+	<hta:application id="mainapp" 
+        applicationName="Tutorials" 
+        contextMenu="no" 
+        icon="powershell.exe" 
+        selection="no" 
+        singleInstance="yes"
+	    version="1.0" 
+    />
+    
+    <script>
+        // window setup
+        window.resizeTo(500,200)
+        var xpos = (screen.width - window.outerWidth) / 2
+        var ypos = (screen.height - window.outerHeight) / 2
+        window.moveTo(xpos, ypos)  
+
+        // functions
+        function runCommand(command) {
+            var wss = new ActiveXObject('WScript.Shell')
+            wss.run(command)            
+        }        
+    </script>
+</head>
+<body>   
+
+    <div id="messOut">
+        <!-- display mesage here -->
+    </div>
+
+    <input type="text" onkeypress="if (event.keyCode == 13) runCommand(this.value)" />
+    <i id="hint" title="To submit, hit the enter key.">?</i>
+
+    <script>
+        var mess = "Input in your command..."
+        var len = mess.length
+
+        var i = 0
+        var typer = setInterval(function(){
+            messOut.innerText += mess.charAt(i)
+            i += 1
+            if (i >= len) {
+                clearInterval(typer)
+            }
+        }, 100)
+
+        setTimeout(function() {
+            window.resizeBy(400)
+            hint.innerText = hint.title
+            setTimeout(function(){
+                window.resizeBy(-400)
+                hint.innerText = '?'
+            }, 2000)
+        }, 5000)           
+    </script>
+</body>
+</html>
