@@ -1,5 +1,5 @@
 # HTA Tutorials
-The code from my video series called "HTA Tutorials".
+The code from my video series called "HTA Tutorials". Interested? [Watch here](https://vid.me/SimplyCoded/albums/hta-tutorials)!
 
 ### Glossary
 [01 - Setup & Requirements](code/tutorial_01.hta)  
